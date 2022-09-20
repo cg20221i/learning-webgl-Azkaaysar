@@ -2,14 +2,66 @@ function main() {
     var canvas = document.getElementById("myCanvas");
     var gl = canvas.getContext("webgl");
   
-    //A( 0.5, 0.5)
-    //B( 0.0, 0.0)
-    //C(-0.5, 0.5)
   
     var vertices =[
-        0.5, 0.5, 
-        0.0, 0.0, 
-        -0.5, 0.5
+
+        // Alphabet O
+      0.2, 0.69, //Outsider O
+      0.4, 0.6,
+      0.07, 0.7,
+      0.0, 0.6,
+      0.07, 0.6,
+      0.0, -0.13,
+      0.07, -0.28,
+      0.0, -0.13,
+      0.33, -0.28,
+      0.33, -0.13,
+      0.33, -0.28,
+      0.4, -0.13,
+      0.32, 0.6,
+      0.4, 0.6,
+      
+
+      // Alpahabet s
+      -0.58, 0.87,
+     -0.8,  0.9,
+     -0.86, 0.8,
+     -0.86, 0.5,
+     -0.83, 0.42,
+     -0.8,  0.5,
+     -0.8,  0.4,
+     -0.75, 0.4,
+     -0.64, 0.55,
+     -0.6,  0.5,
+     -0.6,  0.4,
+     -0.6,  0.3,
+     -0.68, 0.2,
+     -0.8,  0.2,
+     -0.86, 0.15,
+     -0.8,  0.1,
+     -0.65, 0.1,
+     -0.53, 0.25,
+     -0.53, 0.55,
+     -0.6,  0.65,
+     -0.8,  0.65,
+
+    //angka 5
+    -0.9, -0.9,
+    -0.7, -0.9,
+    -0.7, -0.7,
+    -0.9, -0.7,
+    -0.9, -0.5,
+    -0.7, -0.5,
+
+
+    //angka 0
+    -0.5, -0.9,
+    -0.3, -0.9,
+    -0.3, -0.5,
+    -0.5, -0.5,
+    // 0 inside
+    -0.4, -0.6,
+
     ];
   
     //Create a linked-list for storing vertices data in GPU
@@ -63,6 +115,11 @@ function main() {
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
   
-    gl.drawArrays(gl.POINT, 0, 3); //mode -> primitive assembly
+    
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 14);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 14, 21);
+    gl.drawArrays(gl.LINE_STRIP,35 , 6);
+    gl.drawArrays(gl.LINE_LOOP,41 , 4);
+    gl.drawArrays(gl.LINE_STRIP,45 , 1);
   }
-  3
+  
